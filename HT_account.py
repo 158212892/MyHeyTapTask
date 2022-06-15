@@ -12,19 +12,6 @@
 #     'UA':''           # User-Agent,必要
 # },
 
-# 导入系统内置包
-import os
-import sys
-import logging
-
-# 配置文件
-try:
-    from HT_config import downFlag,notifyBlackList,logger
-except Exception as error:
-    logger.info(f'失败原因:{error}')
-    sys.exit(0)
-
-
 ## 账号管理
 accounts = [
     {
@@ -38,8 +25,3 @@ accounts = [
         'UA':''
     },
 ]
-try:
-    accounts = os.environ["HT_COOKIE"].split("&")
-except Exception as error:
-    logger.info('请设置cookie')
-    sys.exit(0)
